@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios, { isAxiosError } from "axios";
+import axios from "axios";
 import { Loader2, AlertCircle, Download } from "lucide-react";
 
 function DownloaderForm() {
@@ -12,18 +12,18 @@ function DownloaderForm() {
     headers: {
       "Content-Type": "application/json",
     },
-    timeout: 10000,
+    timeout: 1000000,
   });
 
   const api = async () => {
     try {
-      const res = await axiosClient.get(`/download/`, {
+      const res = await axiosClient.get("/download", {
         params: { url: inputUrl },
       });
       return res.data;
     } catch (err) {
-      if (isAxiosError(err)) {
-        if (err?.response) {
+      if (axios.isAxiosError(err)) {
+        if (err.response) {
           throw new Error(err.response.data?.error || "Server error");
         } else if (err.code === "ECONNABORTED") {
           throw new Error("Request timeout");
@@ -45,14 +45,14 @@ function DownloaderForm() {
     try {
       const response = await api();
 
-      // ✅ Safe extraction (no crash)
-      const video = response?.data?.result?.[0];
+      // ✅ Correct path based on your API response
+      const video = response?.data?.data?.[0];
 
       if (!video?.url) {
         throw new Error("Video not found");
       }
 
-      // ✅ Direct download via anchor (best approach)
+      // ✅ Download
       const a = document.createElement("a");
       a.href = video.url;
       a.download = "reel.mp4";
@@ -60,10 +60,8 @@ function DownloaderForm() {
       a.click();
       a.remove();
     } catch (err) {
-      const error = err as {
-        message: string;
-      };
-      setError(error?.message || "Something went wrong");
+      const error = err as { message: string };
+      setError(error.message || "Something went wrong");
     } finally {
       setLoading(false);
     }
@@ -117,7 +115,7 @@ export function Hero() {
       <div className="max-w-2xl mx-auto px-4 text-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 mb-6">
           Download Instagram Reels{" "}
-          <span className="text-primary">in Seconds</span>
+          <span className="text-primary">in Minutes</span>
         </h1>
 
         <p className="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed">
