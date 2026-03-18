@@ -23,12 +23,18 @@ app.use(
 app.use(
   rateLimit({
     windowMs: 60 * 60 * 1000, // 60 min
-    max: 2, // limit each IP to 1 request per windowMs
+    max: parseInt(process.env.MAX_LIMIT || "5"), // limit each IP to 1 request per windowMs
   }),
 );
 
 // ---- Env Validation ----
-const REQUIRED_ENV = ["APP_ID", "CLIENT_ID", "API_KEY", "FRONTEND_URL"];
+const REQUIRED_ENV = [
+  "APP_ID",
+  "CLIENT_ID",
+  "API_KEY",
+  "FRONTEND_URL",
+  "MAX_LIMIT",
+];
 REQUIRED_ENV.forEach((key) => {
   if (!process.env[key]) {
     throw new Error(`Missing env: ${key}`);
