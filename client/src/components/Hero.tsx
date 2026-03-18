@@ -60,7 +60,10 @@ function DownloaderForm() {
       a.click();
       a.remove();
     } catch (err) {
-      setError(err?.message || "Something went wrong");
+      const error = err as {
+        message: string;
+      };
+      setError(error?.message || "Something went wrong");
     } finally {
       setLoading(false);
     }
