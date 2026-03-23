@@ -1,14 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import {
-  Loader2,
-  AlertCircle,
-  Download,
-  Check,
-  CheckCheckIcon,
-  CheckCircle2,
-  CircleCheckBig,
-} from "lucide-react";
+import { Loader2, AlertCircle, Download, CircleCheckBig } from "lucide-react";
 
 function DownloaderForm() {
   const [inputUrl, setInputUrl] = useState("");
