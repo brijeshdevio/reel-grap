@@ -25,6 +25,14 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 export function FAQ() {
   return (
     <section className="py-24 bg-slate-50">
+      <div className="text-center mb-16">
+        <h2 className="text-3xl font-bold text-slate-900">
+          Frequently Asked Questions
+        </h2>
+        <p className="text-slate-600 mt-4">
+          We've got answers to the most common questions our users ask.
+        </p>
+      </div>
       <div className="max-w-3xl mx-auto px-4 space-y-4">
         <FAQItem q="Is it free to use?" a="Yes, ReelGrab is 100% free." />
         <FAQItem q="Do I need to login?" a="No login required." />

@@ -1,6 +1,14 @@
 import { useState } from "react";
 import axios from "axios";
-import { Loader2, AlertCircle, Download } from "lucide-react";
+import {
+  Loader2,
+  AlertCircle,
+  Download,
+  Check,
+  CheckCheckIcon,
+  CheckCircle2,
+  CircleCheckBig,
+} from "lucide-react";
 
 function DownloaderForm() {
   const [inputUrl, setInputUrl] = useState("");
@@ -126,9 +134,18 @@ export function Hero() {
 
         {/* Trust Signals */}
         <div className="flex flex-wrap justify-center gap-6 text-sm font-medium text-slate-500 mt-8">
-          <div className="flex items-center gap-2">No login required</div>
-          <div className="flex items-center gap-2">Fast download</div>
-          <div className="flex items-center gap-2">Safe & secure</div>
+          <div className="flex items-center gap-2">
+            <CircleCheckBig className="w-5 h-5 text-green-600" />
+            No login required
+          </div>
+          <div className="flex items-center gap-2">
+            <CircleCheckBig className="w-5 h-5 text-green-600" />
+            Fast download
+          </div>
+          <div className="flex items-center gap-2">
+            <CircleCheckBig className="w-5 h-5 text-green-600" />
+            Safe & secure
+          </div>
         </div>
       </div>
     </section>

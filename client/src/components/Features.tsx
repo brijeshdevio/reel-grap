@@ -2,6 +2,12 @@ export function Features() {
   return (
     <section className="py-20 bg-white" data-purpose="features">
       <div className="max-w-7xl mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold text-slate-900">Features</h2>
+          <p className="text-slate-600 mt-4">
+            ReelGrab makes it easy to download Instagram Reels in high quality.
+          </p>
+        </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Fast Processing */}
           <div className="p-8 border border-slate-100 rounded-custom hover:shadow-lg transition-base group">

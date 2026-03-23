@@ -1,10 +1,11 @@
 export function Footer() {
   return (
     <footer
-      className="bg-slate-900 text-slate-400 py-12"
+      className="bg-slate-900 text-slate-400 py-5"
       data-purpose="site-footer"
     >
-      <div className="max-w-7xl mx-auto px-4 border-t border-slate-800 pt-12">
+      {/* developed by */}
+      <div className="max-w-7xl mx-auto px-4 border-t border-slate-800 pt-5">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex items-center gap-2">
             <div className="w-6 h-6 bg-primary rounded flex items-center justify-center">
@@ -26,22 +27,16 @@ export function Footer() {
               ReelGrab
             </span>
           </div>
-          <div className="flex flex-wrap justify-center gap-8 text-sm">
-            <a className="hover:text-white transition-base" href="#">
-              About
-            </a>
-            <a className="hover:text-white transition-base" href="#">
-              Privacy Policy
-            </a>
-            <a className="hover:text-white transition-base" href="#">
-              Terms of Service
-            </a>
-            <a className="hover:text-white transition-base" href="#">
-              Contact
-            </a>
-          </div>
           <div className="text-xs">
-            © {new Date().getFullYear()} ReelGrab. All rights reserved.
+            Developed by{" "}
+            <a
+              className="hover:text-white transition-base"
+              href="https://brijeshdev.in"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Brijesh
+            </a>
           </div>
         </div>
       </div>
