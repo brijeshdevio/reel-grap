@@ -31,21 +31,11 @@ export function Navbar() {
           <div className="hidden md:flex space-x-8 items-center">
             <a
               className="text-sm font-medium text-slate-600 hover:text-primary transition-base"
-              href="#how-it-works"
+              href="https://github.com/brijeshdevio"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              How it works
-            </a>
-            <a
-              className="text-sm font-medium text-slate-600 hover:text-primary transition-base"
-              href="#"
-            >
-              API
-            </a>
-            <a
-              className="text-sm font-medium text-slate-600 hover:text-primary transition-base"
-              href="#"
-            >
-              Contact
+              GitHub
             </a>
           </div>
         </div>
